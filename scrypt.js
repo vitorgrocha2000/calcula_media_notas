@@ -22,7 +22,7 @@ form.addEventListener('submit', function (e) {
     atualiza_atividades()
     atualiza_resultado()
 
-    // imprime_tabela()
+    imprime_tabela()
 
 })
 
@@ -36,7 +36,7 @@ function adiciona_linha() {
         notas.push(nota_atividade.value);
         atividades.push(nome_atividade.value);
 
-        linha = `<tr>`
+        linha += `<tr>`
         linha += `<td>${nome_atividade.value}</td>`
         linha += `<td>${nota_atividade.value}</td>`
         linha += `<td>${nota_atividade.value >= nota_min ? img_aprovado : img_reprovado}</td>`
@@ -55,7 +55,7 @@ function calcularMedia(notas) {
 
 function atualiza_atividades() {
     const table_body = document.querySelector('tbody')
-    table_body.innerHTML += linha
+    table_body.innerHTML = linha
 }
 
 function atualiza_resultado() {
@@ -76,6 +76,7 @@ function remove_atividade() {
 }
 
 function imprime_tabela() {
-    console.log(atividades)
-    console.log(notas)
+    // console.log(atividades)
+    // console.log(notas)
+    console.log(linha)
 }
